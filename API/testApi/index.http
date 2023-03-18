@@ -1,0 +1,30 @@
+@BASE_URL=http://localhost:8000/api/user
+@CONTENT_TYPE=Content-Type:application/json
+
+###注册API
+post {{ BASE_URL }}/register
+{{ CONTENT_TYPE }}
+
+{
+  "username":"JackLove",
+  "password":"888888"
+}
+
+### 登录API
+post {{ BASE_URL }}/login
+{{ CONTENT_TYPE }}
+
+{
+  "username":"JackLove",
+  "password":"888888"
+}
+
+### 获取个人数据
+get {{ BASE_URL }}/profile
+{{ CONTENT_TYPE }}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NzkwNTE4MTQsImV4cCI6MTY3OTA1MTg3NH0.QFtoZbKOygwVuQqU26Dl96FrJK1n0uHkQtRrhHTfCX0
+
+### 测试用户登录校验
+post {{ BASE_URL }}/check_login
+{{ CONTENT_TYPE }}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NzkwNTE4MTQsImV4cCI6MTY3OTA1MTg3NH0.QFtoZbKOygwVuQqU26Dl96FrJK1n0uHkQtRrhHTfCX0
