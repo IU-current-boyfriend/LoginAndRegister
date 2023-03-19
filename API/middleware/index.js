@@ -32,7 +32,7 @@ function checkTokenMiddleWare(req, res, next) {
   } catch (error) {
     return res.status(200).json({
       err_code: 10007,
-      err_msg: error,
+      err_msg: error.message,
       data: null
     });
   }
