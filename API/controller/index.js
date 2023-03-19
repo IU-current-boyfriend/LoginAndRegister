@@ -76,14 +76,14 @@ async function LoginController(req, res, next) {
   const responseData = {
     username: userInfo.username,
     admin: userInfo.admin,
-    level: userInfo.level,
-    token: acccess_token
+    level: userInfo.level
   };
   // 返回登录成功后的信息
   res.status(200).json({
     err_code: 0,
     err_msg: 'user login success',
-    data: responseData
+    data: responseData,
+    token: acccess_token
   });
 };
 
