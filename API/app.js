@@ -3,10 +3,6 @@ const router = require('./router');
 
 const app = express();
 
-/**
- * 设置router路由中间件
- */
-app.use(router);
 
 /**
  * 跨域
@@ -18,6 +14,13 @@ app.all('*', (req, res, next) => {
   res.header('Content-Type', 'application/json;charset=utf-8');
   next();
 });
+
+/**
+ * 设置router路由中间件
+ */
+app.use(router);
+
+
 
 app.listen(8000, () => {
   console.log('listen 8000 port...');
